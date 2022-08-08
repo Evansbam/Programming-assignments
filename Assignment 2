@@ -1,0 +1,34 @@
+Write a program to calculate the sum of prime numbers less than a given number.
+// I did it myself.
+#include <iostream>
+
+using namespace std;
+
+int main() {
+
+    int num, i, evans, sum = 0;
+
+    // This will take input from the user.
+    cout << "Find sum of prime numbers upto : ";
+    cin >> evans;
+
+    for(num = 2; num < evans; num++) {
+
+        for(i = 2; i < (num / 2); i++) {
+
+            if(num % i == 0) {
+                i = num;
+                break;
+            }
+        }
+
+        
+        if(i != num) {
+            sum += num;            
+        }
+    }
+
+    cout << endl << "Sum of all prime numbers less than " << evans << " : " << sum;
+
+    return 0;
+}
